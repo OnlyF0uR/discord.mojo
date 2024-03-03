@@ -37,7 +37,7 @@ struct Socket:
 
                         sleep(hb)
 
-                parallelize[worker](1)
+                parallelize[worker](1) # TODO: Parallelize asynchronously (async_parallelize), waiting for Mojo finish implementation on their end
                 print("Heartbeat stopped")
 
             wrapper(self._ws, int(heartbeat_interval.to_float64())) # Was the only way to convert to int from python float?
